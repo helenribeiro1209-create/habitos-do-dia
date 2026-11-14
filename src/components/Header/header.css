@@ -1,0 +1,16 @@
+.header {
+  margin-bottom: 16px;
+  padding: 16px;
+  background-color: #0f766e;
+  color: #ffffff;
+  border-radius: 12px;
+}
+
+.header h1 {
+  font-size: 24px;
+}
+
+.header p {
+  font-size: 14px;
+  margin-top: 4px;
+}
