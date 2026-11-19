@@ -4,6 +4,7 @@ import { Counter } from "./components/Counter";
 import { HabitCard } from "./components/HabitCard";
 import { Header } from "./components/Header";
 import initialHabits from "./data/habits";
+import { CounterExercise } from "./components/CounterExercise";
 
 function App() {
   const [habits, setHabits] = useState(initialHabits);
@@ -24,10 +25,11 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Counter />
+      <CounterExercise />
+      {/* <Header /> */}
+      {/*<Counter /> */}
 
-      <main className="habit-list">
+      {/* <main className="habit-list">
         {habits.map((habit) => (
           <HabitCard
             key={habit.id}
@@ -36,7 +38,7 @@ function App() {
             onToggle={() => handleToggle(habit.id)}
           />
         ))}
-      </main>
+      </main> */}
     </>
   );
 }
