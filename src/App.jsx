@@ -5,11 +5,22 @@ import { HabitCard } from "./components/HabitCard";
 import { Header } from "./components/Header";
 import initialHabits from "./data/habits";
 import { CounterExercise } from "./components/CounterExercise";
+import { HabitForm } from "./components/HabitForm";
 
 function App() {
   const [habits, setHabits] = useState(initialHabits);
   const doneCount = habits.filter((habit) => habit.done).length;
-  // const [count, setCount] = useState(0);
+
+  function handleAdd(name) {
+    const newHabit = {
+      id: Date.now(),
+      icon: "⭐",
+      name,
+      done: false,
+    };
+
+    setHabits([...habits, newHabit]);
+  }
 
   function handleToggle(id) {
     //  setCount(count + 1);
@@ -26,7 +37,7 @@ function App() {
   // console.log(doneCount);
   return (
     <>
-      <CounterExercise />
+      {/*<CounterExercise /> */}
       <Header />
       <Counter doneCount={doneCount} total={habits.length} />
 
@@ -36,10 +47,13 @@ function App() {
             key={habit.id}
             icon={habit.icon}
             name={habit.name}
+            done={habit.done}
             onToggle={() => handleToggle(habit.id)}
           />
         ))}
       </main>
+
+      <HabitForm onAdd={handleAdd} />
     </>
   );
 }
