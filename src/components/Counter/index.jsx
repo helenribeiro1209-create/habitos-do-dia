@@ -6,6 +6,7 @@ export function Counter({ doneCount, total }) {
       <p>
         Hoje: {doneCount} de {total}
       </p>
+      <progress value={doneCount} max={total} />
     </section>
   );
 }

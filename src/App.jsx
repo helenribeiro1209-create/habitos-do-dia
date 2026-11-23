@@ -4,7 +4,8 @@ import { Counter } from "./components/Counter";
 import { HabitCard } from "./components/HabitCard";
 import { Header } from "./components/Header";
 import initialHabits from "./data/habits";
-import { CounterExercise } from "./components/CounterExercise";
+// import { CounterExercise } from "./components/CounterExercise";
+
 import { HabitForm } from "./components/HabitForm";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         return habit.id == id ? { ...habit, done: !habit.done } : habit;
       }),
     );
+    
   }
   // console.log(doneCount);
   return (
