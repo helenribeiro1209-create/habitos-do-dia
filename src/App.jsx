@@ -34,9 +34,12 @@ function App() {
         return habit.id == id ? { ...habit, done: !habit.done } : habit;
       }),
     );
-    
   }
   // console.log(doneCount);
+  function handleDelete(id) {
+    setHabits(habits.filter((habit) => habit.id != id));
+  }
+
   return (
     <>
       {/*<CounterExercise /> */}
@@ -51,6 +54,7 @@ function App() {
             name={habit.name}
             done={habit.done}
             onToggle={() => handleToggle(habit.id)}
+            onDelete={() => handleDelete(habit.id)}
           />
         ))}
       </main>
