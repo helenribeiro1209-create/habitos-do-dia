@@ -4,7 +4,8 @@ import { Counter } from "./components/Counter";
 import { HabitCard } from "./components/HabitCard";
 import { Header } from "./components/Header";
 import initialHabits from "./data/habits";
-import { CounterExercise } from "./components/CounterExercise";
+// import { CounterExercise } from "./components/CounterExercise";
+
 import { HabitForm } from "./components/HabitForm";
 
 function App() {
@@ -35,6 +36,10 @@ function App() {
     );
   }
   // console.log(doneCount);
+  function handleDelete(id) {
+    setHabits(habits.filter((habit) => habit.id != id));
+  }
+
   return (
     <>
       {/*<CounterExercise /> */}
@@ -49,6 +54,7 @@ function App() {
             name={habit.name}
             done={habit.done}
             onToggle={() => handleToggle(habit.id)}
+            onDelete={() => handleDelete(habit.id)}
           />
         ))}
       </main>
